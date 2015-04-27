@@ -5,7 +5,8 @@ RUN apt-get update \
  && rm -rf /var/lib/mysql/mysql \
  && rm -rf /var/lib/apt/lists/* # 20150323
 
-RUN usermod -u 1000 mysql
+# Resolve permission problems in Mac OS X
+#RUN usermod -u 1000 mysql
 
 ADD start /start
 RUN chmod 755 /start
